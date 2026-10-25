@@ -12,17 +12,17 @@
 <title>For My Love</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Libre+Franklin:wght@400;500&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
-<audio id="bgMusic" loop>
+<audio id="bgMusic" autoplay loop>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-    window.addEventListener("load", () => {
-        const music = document.getElementById("bgMusic");
-        music.volume = 0.2;
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.3;
 
-        music.play().catch(() => {
-            console.log("Music will play after user interaction.");
+    window.addEventListener("load", () => {
+        music.play().catch(error => {
+            console.log("Autoplay blocked by browser:", error);
         });
     });
 </script>
